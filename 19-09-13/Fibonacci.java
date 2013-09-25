@@ -2,15 +2,19 @@ import java.util.Scanner;
 
 public class Fibonacci{
 	
-	public static int getFibonacci(int pos){
-		if(pos>2){
-			return getFibonacci(pos-1)+getFibonacci(pos-2);
-		}
-		if(pos==2){
-			return 1;		
-		}
-		return 0;
+	public static int getFibonacci(int pos){		
+		int fib=0;
+		int fibPast=1;
+		int fibPast2=0;
+
+		for(int i=0; i<pos; i++){
+			fibPast2=fibPast;
+			fibPast=fib;			
+			fib=fibPast+fibPast2;
+		}				
+		return fib;		
 	}
+
 	public static void main(String[] args){
 		boolean invalid= false;
 		int posicion=0;	
