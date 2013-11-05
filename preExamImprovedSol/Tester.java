@@ -12,6 +12,9 @@ public class Tester{
 				unpaired.push(x);
 				i++;
 			}else{
+				if(unpaired.isEmpty()){
+					return false;
+				}
 				switch(x){
 					case '}': 
 						if(unpaired.pop()!='{'){

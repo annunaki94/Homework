@@ -28,6 +28,9 @@ public class LinkedList<T> implements Iterable<T>{
 	public T get(int index){
 		checkIndex(index);		
 		Node<T> current= this.firstNode;
+		while(current.isRemoveable()){
+			current=current.next();			
+		}
 		int i=0;		
 		while(i<index){
 			if(!current.next().isRemoveable()){
@@ -173,8 +176,7 @@ public class LinkedList<T> implements Iterable<T>{
 		test.add("i");
 		test.add("j");
 		
-		test.remove(4);
-
+		test.remove(0);
 		for(String s: test){
 			System.out.println(s);
 		}
